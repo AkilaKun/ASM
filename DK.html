@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body ng-app="b3" ng-controller="ctrl1">
+    <div class="container">
+    <form class="form">
+        <div class="giohang">
+            <a href="./giohang.html" onclick="showcart();"><img src="./images/cart.png"><span id="countsp">0</span></a>
+        </div>
+        <div class="boxcenter">
+            <div class="row mb header">
+                <h1>SIÊU THỊ ĐIỆN TỬ</h1>
+            </div>
+            <div class="row mb menu">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="#">Giỏ hàng</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Góp ý</a></li>
+                    <li><a href="#">Hỏi đáp</a></li>
+                    <li><a href="DK.html">Đăng kí</a></li>
+                </ul>
+            </div>
+        </div>
+        <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input name="tensv" ng-model="tensv" required minlength="2" maxlength="40" type="text" class="form-control bg-info text-white">
+            <em ng-if="frm.tensv.$invalid" class="text-danger h6">Họ và tên không được bỏ trống</em>
+        </div>
+        <div class="form-group">
+            <label>Email</label> <br>
+            <input name="email" ng-model="email" required minlength="8" maxlength="45" type="text" class="form-control bg-info text-white">
+            <em ng-if="frm.email.$invalid" class="text-danger h6">Không được bỏ trống email</em>
+        </div>
+        <div class="form-group">
+            <label>Giới tính</label>
+            <fieldset class="border border-secondary p-3">
+                <input name="gioitinh" ng-model="gioitinh" type="radio" value="1"> Nam &nbsp;
+                <input name="gioitinh" ng-model="gioitinh" type="radio" value="2"> Nữ
+            </fieldset>
+            <em ng-if="!gioitinh" class="text-danger h6">Hãy chọn một giới tính của bạn</em>
+        </div>
+        <div class="form-group">
+            <label>Quốc tịch</label>
+            <select name="nsx" ng-model="nsx" class="form-control bg-warning text-white">
+                <option value="0">Việt Nam</option>
+                <option value="1">USA</option>
+                <option value="2">Nga</option>
+                <option value="3">Pháp<option>
+                <option value="4">Đức</option>
+                <option value="5">Úc</option>
+            </select>
+            <em ng-if="!nsx" class="text-danger h6">Hãy chọn 1 quốc tịch mà bạn có</em>
+        </div>
+        <hr />
+        <div class="from-group">
+            <button style="margin-bottom: 10px;" class="btn btn-info">Đăng ký</button>
+        </div>
+    </form>
+</body>
+<script>
+    app = angular.module("b3", []);
+    app.controller("ctrl1", xuly);
+    function xuly($scope) {
+        // code xử lý
+    }
+</script>
+</html>
